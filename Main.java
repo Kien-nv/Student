@@ -48,7 +48,7 @@ public class Main{
     public static void add(){
         // st= new Student();
         input(st);
-        list_st.add(st);
+        list_st.add(st);// Chỗ này mình add st vào trong arraylist rồi sao lúc in ra vẫn là null hết bạn ạ 
     }
 
 }
