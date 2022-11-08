@@ -40,7 +40,7 @@ public class Main{
         System.out.printf("%-5s %5s %20s %15s \n", "ID", "Name", "Address", "Status");
         
         for (Student iStudent : list_st) {
-            iStudent= new Student();
+            //iStudent= new Student(); đây là hàm khởi tạo không đối số, khởi tạo ko ko truyền gì => tất cả giá trị đều Null
             iStudent.show();
         }
         
