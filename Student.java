@@ -1,16 +1,21 @@
-package My_album;
+package Student;
 
 public class Student {
     
     private int id;
     private String name;
     private  String address;
-    private String status;
     public Student(){}
-
-    public Student(int id, String name, String address, String status) {
-        this.id=id;this.name=name;this.address=address;this.status=status;
+    public Student(int id){
+        this.id=id;
     }
+    private String status;
+    private int score;
+
+    public Student(int id, String name, String address, String status, int score){ 
+        {
+        this.id=id;this.name=name;this.address=address;this.status=status;this.score=score;
+    }}
     public void set_id(int id) {
         this.id=id;
     }
@@ -22,12 +27,10 @@ public class Student {
     }
     public void set_status(String status) {
         this.status=status;
-        // if (status=="yes") {
-        //     this.status=true; 
-        // }else{
-        //     this.status=false;
+    }
+    public void set_score(int score) {
+        this.score=score;
 
-        // }
     }
     public int get_id() {
         return id;
@@ -41,13 +44,16 @@ public class Student {
     public String get_status() {
         return status;
     }
+    public int get_score(){
+        return score;
+    }
 
     public String toString(){
-        return "Student {ID_Student:"+ id +" Name:"+name + "Address:" + address+"Status:" + status+"}";
+        return "Student {ID_Student:"+ id +" Name:"+name + "Score:" +score+ "Address:" + address+"Status:" + status+"}";
     }
 
     public void show(){
-        System.out.printf("%-5d %-20s %-15s %-15s \n", id, name, address, status);
+        System.out.printf("%-5d %-20s %-5d %-15s %-15s  \n", id, name, score, address, status);
     }
 
 }

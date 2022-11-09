@@ -1,25 +1,32 @@
-package My_album;
+package Student;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main{
     static Scanner sc= new Scanner(System.in);
     static ArrayList<Student> list_st = new ArrayList<Student>();
-    static Student st=new Student();
-    static int counter =1;
+    static int counter=0;
     
 
     public static void main(String[] args) {
         int n;
         do {
-            System.out.println("1. Add them sinh vien \n"+"2. Xem danh sach sv"+"0.Thoát");
+            System.out.println("1. Add them sinh vien \n"+"2. Xem danh sach sv\n"+"0.Thoát \n"+"3. Searching student \n"
+            +"4. Xoa sinh vien \n"
+            +"5. Sua thong tin sv\n");
             n= sc.nextInt();
-            if (n==1) {
+            switch(n) {
+            case 1:
                 add();
-            }else if (n==2) {show_screen();}
-            else if (n==0) {break;}
-        } while (n!=0);
-
-        
+                break;
+            case 2:
+            show_screen();
+            break;
+            case 0:
+             break;
+             case 3:
+             search();
+         } 
+        }while (n!=0);        
     }
     
 
@@ -27,6 +34,8 @@ public class Main{
 
         System.out.print("Input ID_Student "+counter+":");
         st.set_id(sc.nextInt());
+        System.out.print("Input Score "+counter+":");
+        st.set_score(sc.nextInt());
         sc.nextLine();
         System.out.print("Input name "+counter+":");
         st.set_name(sc.nextLine());
@@ -37,18 +46,46 @@ public class Main{
         counter++;
     }
     public static void show_screen(){
-        System.out.printf("%-5s %5s %20s %15s \n", "ID", "Name", "Address", "Status");
+        if (list_st.size()<1)  {
+            System.out.println("List empty, Please choice 1 to input !");
+            
+        } else {
+            System.out.printf("%-5s %5s %20s %15s %5s \n", "ID", "Name", "Score", "Address", "Status");
         
         for (Student iStudent : list_st) {
-            iStudent= new Student();
             iStudent.show();
+        }
+            
         }
         
     }
     public static void add(){
-        // st= new Student();
+        Student st = new Student();
         input(st);
         list_st.add(st);
     }
+    public static void sort(){
+    }
+    public static void search(){
+        int ID;
+        System.out.println("Nhap ma sinh vien vao:");
+        ID=sc.nextInt();
+
+        for (Student student : list_st) {
+            if(student.get_id()==ID){
+                student.show();
+            }else{
+                System.out.println(" Don't have this student !");
+            }
+            
+        }
+
+    }
+    public static void edit(){}
+    public static void delete(){}
+
+
+
+
 
 }
