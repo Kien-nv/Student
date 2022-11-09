@@ -53,7 +53,6 @@ public class Main{
             System.out.printf("%-5s %5s %20s %15s %5s \n", "ID", "Name", "Score", "Address", "Status");
         
         for (Student iStudent : list_st) {
-            iStudent= new Student();
             iStudent.show();
         }
             
