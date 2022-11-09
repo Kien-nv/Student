@@ -53,6 +53,7 @@ public class Main{
             System.out.printf("%-5s %5s %20s %15s %5s \n", "ID", "Name", "Score", "Address", "Status");
         
         for (Student iStudent : list_st) {
+            iStudent= new Student();
             iStudent.show();
         }
             
@@ -62,7 +63,7 @@ public class Main{
     public static void add(){
         Student st = new Student();
         input(st);
-        list_st.add(st);
+        list_st.add(st);// Chỗ này mình add st vào trong arraylist rồi sao lúc in ra vẫn là null hết bạn ạ 
     }
     public static void sort(){
     }
